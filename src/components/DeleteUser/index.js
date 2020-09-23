@@ -35,6 +35,7 @@ export const DeleteUser = () => {
 		if (id > 0) {
 			eraseUser();
 			handleClose();
+			setId('');
 		} else {
 			window.alert('wrong number, only + numbers');
 		}

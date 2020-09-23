@@ -30,8 +30,9 @@ you can see the flow at the following [link](https://drive.google.com/file/d/1re
   - headder
   - user card
   - pagination
-  - deleteUser
+  - delete User
   - create user
+  - update user
 - pages
   - list of users
 - crud

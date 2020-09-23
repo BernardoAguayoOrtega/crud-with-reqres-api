@@ -46,6 +46,11 @@ export const UpdateUser = () => {
 	const handleSubmit = () => {
 		handleClose();
 		update();
+		setId('');
+		setLastName('');
+		setFirstName('');
+		setFirstName('');
+		setAvatar('');
 	};
 
 	return (

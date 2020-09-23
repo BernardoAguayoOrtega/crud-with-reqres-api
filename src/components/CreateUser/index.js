@@ -44,6 +44,10 @@ export const CreateUser = () => {
 	const handleSubmit = () => {
 		handleClose();
 		createNewUser();
+		setLastName('');
+		setFirstName('');
+		setFirstName('');
+		setAvatar('');
 	};
 
 	return (
