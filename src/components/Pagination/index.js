@@ -9,7 +9,7 @@ export const PaginationComponent = () => {
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>
-			<Pagination count={10} color='primary' />
+			<Pagination page={1} count={10} color='primary' />
 		</div>
 	);
 };

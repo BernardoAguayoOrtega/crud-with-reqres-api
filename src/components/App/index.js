@@ -6,6 +6,8 @@ import { Header } from '../Header';
 import { instance, getUsers } from '../../utils/request';
 //import pagination
 import { PaginationComponent } from '../Pagination';
+//import user card component
+import { UserCard } from '../UserCard';
 
 //create and export app component
 export const App = () => {
@@ -14,6 +16,7 @@ export const App = () => {
 	return (
 		<>
 			<Header />
+			<UserCard />
 			<PaginationComponent />
 		</>
 	);
