@@ -1,17 +1,13 @@
 //import react and its hooks
-import React, { useContext } from 'react';
+import React from 'react';
 //import the styles
 import { useStyles } from './styles';
 //import material ui components
 import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
-//import context
-import { Context } from '../../utils/context';
 
-export const UserCard = () => {
+export const UserCard = ({ firstName, lastName, email, id, avatar }) => {
 	//use the classes
 	const classes = useStyles();
-	//use the context
-	const { email, firstName, lastName, avatar } = useContext(Context);
 
 	return (
 		<Card aria-label='user card' className={classes.root}>
@@ -21,14 +17,13 @@ export const UserCard = () => {
 						{`${firstName} ${lastName}`}
 					</Typography>
 					<Typography aria-label='user info' variant='subtitle1'>
-						{email}
+						{`${email} id:${id}`}
 					</Typography>
 				</CardContent>
 			</div>
-			<CardMedia
+			<img
 				aria-label='card image'
-				className={classes.cover}
-				image={avatar}
+				src={avatar}
 				title={`image of ${firstName} ${lastName}`}
 			/>
 		</Card>
