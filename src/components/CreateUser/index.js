@@ -63,10 +63,10 @@ export const DeleteUser = () => {
 							className={classes.title}
 							variant='h6'
 							component='p'>
-							Enter the id of the user you want to delete
+							Enter the data to create the user
 						</Typography>
 						<TextField
-							aria-label='user id'
+							aria-label='user first name'
 							value={id}
 							id='outlined-basic'
 							label='user id'
@@ -75,12 +75,11 @@ export const DeleteUser = () => {
 							onChange={(e) => setId(e.target.value)}
 						/>
 						<Button
-							aria-label='delete button'
 							className={classes.button}
 							variant='contained'
 							color='secondary'
 							onClick={handleDelete}>
-							DELETE
+							Create User
 						</Button>
 					</div>
 				</Fade>

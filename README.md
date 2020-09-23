@@ -27,6 +27,13 @@ you can see the flow at the following [link](https://drive.google.com/file/d/1re
 
 - components
   - app
+  - headder
+  - user card
+  - pagination
+  - deleteUser
+  - create user
+- pages
+  - list of users
 - crud
   - create user
   - read users
@@ -37,6 +44,7 @@ you can see the flow at the following [link](https://drive.google.com/file/d/1re
 
 - material ui
 - material ui icons
+- react spring
 
 ## hosting
 
