@@ -53,13 +53,16 @@ export const Header = () => {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
-								Profile
+								See users
 							</MenuItem>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
-								My account
+								Create user
 							</MenuItem>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
-								Logout
+								Edit user
+							</MenuItem>
+							<MenuItem aria-label='menu item' onClick={handleClose}>
+								Delete user
 							</MenuItem>
 						</Menu>
 						<Typography
