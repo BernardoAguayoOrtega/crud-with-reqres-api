@@ -15,7 +15,13 @@ export const PaginationComponent = () => {
 
 	return (
 		<div className={classes.root}>
-			<Pagination size='large' page={1} count={10} color='primary' />
+			<Pagination
+				size='large'
+				onChange={(event, page) => setCurrentlyPage(page)}
+				page={currentlyPage}
+				count={2}
+				color='primary'
+			/>
 		</div>
 	);
 };
