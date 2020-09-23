@@ -6,14 +6,18 @@ import { Grid } from '@material-ui/core';
 import { Context } from '../../utils/context';
 //import user card component
 import { UserCard } from '../../components/UserCard';
+//import pagination
+import { PaginationComponent } from '../../components/Pagination';
+//import styles
+import './styles.css';
 
 //create page list of users and export it
 export const ListOfUsers = () => {
 	const { users } = useContext(Context);
 
 	return (
-		<>
-			<Grid container spacing={2}>
+		<div className='list-of-posts'>
+			<Grid className='list-of-posts__grid' container spacing={2}>
 				{/*use the grid item*/}
 				<Grid item xs={12}>
 					<Grid container justify='center' spacing={0}>
@@ -30,6 +34,7 @@ export const ListOfUsers = () => {
 					</Grid>
 				</Grid>
 			</Grid>
-		</>
+			<PaginationComponent />
+		</div>
 	);
 };

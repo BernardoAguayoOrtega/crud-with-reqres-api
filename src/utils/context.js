@@ -49,6 +49,8 @@ export const ContextProvider = ({ children }) => {
 				id,
 				setId,
 				users,
+				currentlyPage,
+				setCurrentlyPage,
 			}}>
 			{children}
 		</Context.Provider>
