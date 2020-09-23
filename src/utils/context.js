@@ -19,6 +19,8 @@ export const ContextProvider = ({ children }) => {
 	//use state for the whole users
 	const [users, setUsers] = useState([]);
 	const [currentlyPage, setCurrentlyPage] = useState(1);
+	//save the response
+	const [response, setResponse] = useState(undefined);
 
 	//use the effect to bring the users
 	/**
@@ -37,7 +39,10 @@ export const ContextProvider = ({ children }) => {
 
 	//delete user function
 	const eraseUser = () => {
-		instance.delete(deleteUser(id)).then((response) => console.log(response));
+		instance
+			.delete(deleteUser(id))
+			.then((response) => setResponse(response.status))
+			.catch((error) => setResponse(error.status));
 	};
 
 	return (
@@ -57,6 +62,8 @@ export const ContextProvider = ({ children }) => {
 				currentlyPage,
 				setCurrentlyPage,
 				eraseUser,
+				response,
+				setResponse,
 			}}>
 			{children}
 		</Context.Provider>

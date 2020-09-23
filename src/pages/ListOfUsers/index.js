@@ -10,7 +10,8 @@ import { UserCard } from '../../components/UserCard';
 import { PaginationComponent } from '../../components/Pagination';
 //import spring tools
 import { useSpring, animated } from 'react-spring';
-//import the context
+//import alert
+import { Alert } from '../../components/Alert';
 //import styles
 import './styles.css';
 
@@ -29,6 +30,7 @@ export const ListOfUsers = () => {
 
 	return (
 		<div className='list-of-posts'>
+			<Alert />
 			<Grid
 				aria-label='grid container'
 				className='list-of-posts__grid'
