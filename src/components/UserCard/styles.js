@@ -7,6 +7,7 @@ export const useStyles = makeStyles((theme) => ({
 		background: 'gray',
 		width: '20rem',
 		color: 'white',
+		margin: '1rem',
 	},
 	details: {
 		display: 'flex',

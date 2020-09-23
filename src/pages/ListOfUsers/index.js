@@ -16,7 +16,7 @@ export const ListOfUsers = () => {
 			<Grid container spacing={2}>
 				{/*use the grid item*/}
 				<Grid item xs={12}>
-					<Grid container justify='center' spacing={2}>
+					<Grid container justify='center' spacing={0}>
 						{users.map((user, i) => (
 							<UserCard
 								key={i}

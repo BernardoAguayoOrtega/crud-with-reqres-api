@@ -3,7 +3,7 @@ import React from 'react';
 //import the styles
 import { useStyles } from './styles';
 //import material ui components
-import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 export const UserCard = ({ firstName, lastName, email, id, avatar }) => {
 	//use the classes
@@ -17,14 +17,14 @@ export const UserCard = ({ firstName, lastName, email, id, avatar }) => {
 						{`${firstName} ${lastName}`}
 					</Typography>
 					<Typography aria-label='user info' variant='subtitle1'>
-						{`${email} id:${id}`}
+						{`${email} id: ${id}`}
 					</Typography>
 				</CardContent>
 			</div>
 			<img
 				aria-label='card image'
 				src={avatar}
-				title={`image of ${firstName} ${lastName}`}
+				alt={`${firstName} ${lastName}`}
 			/>
 		</Card>
 	);
