@@ -8,6 +8,9 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 //import fade
 import Fade from '@material-ui/core/Fade';
+import { Button, MenuItem, TextField } from '@material-ui/core';
+//import typography
+import Typography from '@material-ui/core/Typography';
 
 export const DeleteUser = () => {
 	const classes = useStyles();
@@ -23,9 +26,9 @@ export const DeleteUser = () => {
 
 	return (
 		<div>
-			<button type='button' onClick={handleOpen}>
+			<MenuItem type='button' onClick={handleOpen}>
 				Delete User
-			</button>
+			</MenuItem>
 			<Modal
 				aria-labelledby='transition-modal-title'
 				aria-describedby='transition-modal-description'
@@ -39,10 +42,20 @@ export const DeleteUser = () => {
 				}}>
 				<Fade in={open}>
 					<div className={classes.paper}>
-						<h2 id='transition-modal-title'>Transition modal</h2>
-						<p id='transition-modal-description'>
-							react-transition-group animates me.
-						</p>
+						<Typography className={classes.title} variant='h6' component='p'>
+							Enter the id of the user you want to delete
+						</Typography>
+						<TextField
+							id='outlined-basic'
+							label='Outlined'
+							variant='outlined'
+						/>
+						<Button
+							className={classes.button}
+							variant='contained'
+							color='secondary'>
+							DELETE
+						</Button>
 					</div>
 				</Fade>
 			</Modal>
