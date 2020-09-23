@@ -12,6 +12,8 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 //import delete user component
 import { DeleteUser } from '../DeleteUser';
+//import create user component
+import { CreateUser } from '../CreateUser';
 //import use styles
 import { useStyles } from './styles';
 
@@ -58,7 +60,7 @@ export const Header = () => {
 								<DeleteUser />
 							</MenuItem>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
-								Edit user
+								<CreateUser />
 							</MenuItem>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
 								Delete user

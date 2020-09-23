@@ -24,4 +24,7 @@ export const useStyles = makeStyles((theme) => ({
 	button: {
 		margin: '1rem',
 	},
+	input: {
+		margin: '1rem 0',
+	},
 }));

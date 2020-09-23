@@ -14,13 +14,22 @@ import Typography from '@material-ui/core/Typography';
 //import context
 import { Context } from '../../utils/context';
 
-export const DeleteUser = () => {
+export const CreateUser = () => {
 	//use styles
 	const classes = useStyles();
 	// use local state
 	const [open, setOpen] = React.useState(false);
 	//use global context
-	const { eraseUser, id, setId } = useContext(Context);
+	const {
+		email,
+		setEmail,
+		firstName,
+		setFirstName,
+		lastName,
+		setLastName,
+		avatar,
+		setAvatar,
+	} = useContext(Context);
 
 	//handle the open
 	const handleOpen = () => {
@@ -31,19 +40,12 @@ export const DeleteUser = () => {
 		setOpen(false);
 	};
 	//handle de delete
-	const handleDelete = () => {
-		if (id > 0) {
-			eraseUser();
-			handleClose();
-		} else {
-			window.alert('wrong number, only + numbers');
-		}
-	};
+	const handleSubmit = () => {};
 
 	return (
 		<div>
 			<Button aria-labelledby='button' type='button' onClick={handleOpen}>
-				Delete User
+				CreateUser
 			</Button>
 			<Modal
 				aria-labelledby='transition-modal-title'
@@ -66,19 +68,48 @@ export const DeleteUser = () => {
 							Enter the data to create the user
 						</Typography>
 						<TextField
+							className={classes.input}
 							aria-label='user first name'
-							value={id}
+							value={firstName}
 							id='outlined-basic'
-							label='user id'
+							label='first name'
 							variant='outlined'
-							type='number'
-							onChange={(e) => setId(e.target.value)}
+							onChange={(e) => setFirstName(e.target.value)}
+						/>
+						<TextField
+							className={classes.input}
+							aria-label='user last name'
+							value={lastName}
+							id='outlined-basic'
+							label='last name'
+							variant='outlined'
+							onChange={(e) => setLastName(e.target.value)}
+						/>
+						<TextField
+							type='email'
+							className={classes.input}
+							aria-label='email'
+							value={email}
+							id='outlined-basic'
+							label='email'
+							variant='outlined'
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+						<TextField
+							className={classes.input}
+							type='file'
+							aria-label='avatar'
+							value={firstName}
+							id='outlined-basic'
+							label='avatar'
+							variant='standard'
+							onChange={(e) => setAvatar(e.target.value)}
 						/>
 						<Button
 							className={classes.button}
 							variant='contained'
-							color='secondary'
-							onClick={handleDelete}>
+							color='primary'
+							onClick={handleSubmit}>
 							Create User
 						</Button>
 					</div>
