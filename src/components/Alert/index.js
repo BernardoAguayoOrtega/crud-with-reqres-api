@@ -16,7 +16,7 @@ export const Alert = () => {
 	return (
 		<div className={classes.root}>
 			{/*good alert*/}
-			{response > 200 && response < 300 ? (
+			{response >= 200 && response < 300 ? (
 				<AlertMaterial onClose={() => setResponse(0)}>
 					Task completed!
 				</AlertMaterial>

@@ -75,7 +75,7 @@ export const CreateUser = () => {
 							className={classes.input}
 							aria-label='user first name'
 							value={firstName}
-							id='outlined-basic'
+							id='outlined-basic1'
 							label='first name'
 							variant='outlined'
 							onChange={(e) => setFirstName(e.target.value)}
@@ -84,7 +84,7 @@ export const CreateUser = () => {
 							className={classes.input}
 							aria-label='user last name'
 							value={lastName}
-							id='outlined-basic'
+							id='outlined-basic2'
 							label='last name'
 							variant='outlined'
 							onChange={(e) => setLastName(e.target.value)}
@@ -94,7 +94,7 @@ export const CreateUser = () => {
 							className={classes.input}
 							aria-label='email'
 							value={email}
-							id='outlined-basic'
+							id='outlined-basic3'
 							label='email'
 							variant='outlined'
 							onChange={(e) => setEmail(e.target.value)}
@@ -104,7 +104,7 @@ export const CreateUser = () => {
 							type='file'
 							aria-label='avatar'
 							value={avatar}
-							id='outlined-basic'
+							id='outlined-basic4'
 							label='avatar'
 							variant='standard'
 							onChange={(e) => setAvatar(e.target.value)}

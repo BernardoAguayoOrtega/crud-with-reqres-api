@@ -1,7 +1,13 @@
 //import react and its hooks
 import React, { useState, useEffect } from 'react';
 //import instance
-import { instance, getUsers, deleteUser, createUser } from './request';
+import {
+	instance,
+	getUsers,
+	deleteUser,
+	createUser,
+	updateUser,
+} from './request';
 
 //create the context and export it
 export const Context = React.createContext();
@@ -56,6 +62,19 @@ export const ContextProvider = ({ children }) => {
 			.catch((error) => setResponse(error.status));
 	};
 
+	//update user function
+	const update = () => {
+		instance
+			.put(updateUser(id), {
+				firstName: firstName,
+				lastName: lastName,
+				email: email,
+				avatar: avatar,
+			})
+			.then((response) => setResponse(response.status))
+			.catch((error) => setResponse(error.status));
+	};
+
 	return (
 		<Context.Provider
 			value={{
@@ -76,6 +95,7 @@ export const ContextProvider = ({ children }) => {
 				response,
 				setResponse,
 				createNewUser,
+				update,
 			}}>
 			{children}
 		</Context.Provider>

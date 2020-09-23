@@ -14,7 +14,7 @@ import Typography from '@material-ui/core/Typography';
 //import context
 import { Context } from '../../utils/context';
 
-export const CreateUser = () => {
+export const UpdateUser = () => {
 	//use styles
 	const classes = useStyles();
 	// use local state
@@ -29,7 +29,9 @@ export const CreateUser = () => {
 		setLastName,
 		avatar,
 		setAvatar,
-		createNewUser,
+		update,
+		id,
+		setId,
 	} = useContext(Context);
 
 	//handle the open
@@ -43,7 +45,7 @@ export const CreateUser = () => {
 	//handle de delete
 	const handleSubmit = () => {
 		handleClose();
-		createNewUser();
+		update();
 	};
 
 	return (
@@ -72,10 +74,20 @@ export const CreateUser = () => {
 							Enter the data to create the user
 						</Typography>
 						<TextField
+							type='number'
+							className={classes.input}
+							aria-label='user id'
+							value={id}
+							id='outlined-basic1'
+							label='update the user'
+							variant='outlined'
+							onChange={(e) => setId(e.target.value)}
+						/>
+						<TextField
 							className={classes.input}
 							aria-label='user first name'
 							value={firstName}
-							id='outlined-basic'
+							id='outlined-basic2'
 							label='first name'
 							variant='outlined'
 							onChange={(e) => setFirstName(e.target.value)}
@@ -84,7 +96,7 @@ export const CreateUser = () => {
 							className={classes.input}
 							aria-label='user last name'
 							value={lastName}
-							id='outlined-basic'
+							id='outlined-basic3'
 							label='last name'
 							variant='outlined'
 							onChange={(e) => setLastName(e.target.value)}
@@ -94,7 +106,7 @@ export const CreateUser = () => {
 							className={classes.input}
 							aria-label='email'
 							value={email}
-							id='outlined-basic'
+							id='outlined-basic4'
 							label='email'
 							variant='outlined'
 							onChange={(e) => setEmail(e.target.value)}
@@ -104,7 +116,7 @@ export const CreateUser = () => {
 							type='file'
 							aria-label='avatar'
 							value={avatar}
-							id='outlined-basic'
+							id='outlined-basic5'
 							label='avatar'
 							variant='standard'
 							onChange={(e) => setAvatar(e.target.value)}
