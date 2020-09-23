@@ -1,7 +1,7 @@
 //import react and its hooks
 import React, { useState, useEffect } from 'react';
 //import instance
-import { instance, getUsers } from './request';
+import { instance, getUsers, deleteUser } from './request';
 
 //create the context and export it
 export const Context = React.createContext();
@@ -15,7 +15,7 @@ export const ContextProvider = ({ children }) => {
 	const [avatar, setAvatar] = useState(
 		'https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg',
 	);
-	const [id, setId] = useState('1');
+	const [id, setId] = useState(0);
 	//use state for the whole users
 	const [users, setUsers] = useState([]);
 	const [currentlyPage, setCurrentlyPage] = useState(1);
@@ -35,6 +35,11 @@ export const ContextProvider = ({ children }) => {
 			);
 	}, [currentlyPage]);
 
+	//delete user function
+	const eraseUser = () => {
+		instance.delete(deleteUser(id)).then((response) => console.log(response));
+	};
+
 	return (
 		<Context.Provider
 			value={{
@@ -51,6 +56,7 @@ export const ContextProvider = ({ children }) => {
 				users,
 				currentlyPage,
 				setCurrentlyPage,
+				eraseUser,
 			}}>
 			{children}
 		</Context.Provider>

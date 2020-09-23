@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex',
-		background: 'gray',
+		background: '#4055B5',
 		width: '20rem',
 		color: 'white',
 		margin: '1rem',
