@@ -10,6 +10,8 @@ import {
 	MenuItem,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+//import delete user component
+import { DeleteUser } from '../DeleteUser';
 //import use styles
 import { useStyles } from './styles';
 
@@ -53,10 +55,7 @@ export const Header = () => {
 							open={Boolean(anchorEl)}
 							onClose={handleClose}>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
-								See users
-							</MenuItem>
-							<MenuItem aria-label='menu item' onClick={handleClose}>
-								Create user
+								<DeleteUser />
 							</MenuItem>
 							<MenuItem aria-label='menu item' onClick={handleClose}>
 								Edit user

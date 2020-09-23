@@ -29,12 +29,21 @@ export const ListOfUsers = () => {
 
 	return (
 		<div className='list-of-posts'>
-			<Grid className='list-of-posts__grid' container spacing={2}>
+			<Grid
+				aria-label='grid container'
+				className='list-of-posts__grid'
+				container
+				spacing={2}>
 				{/*use the grid item*/}
 				<Grid item xs={12}>
-					<Grid container justify='center' spacing={0}>
+					<Grid
+						aria-label='grid content'
+						container
+						justify='center'
+						spacing={0}>
 						{users.map((user, i) => (
 							<animated.div
+								key={i}
 								style={{
 									opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
 									transform: x
@@ -46,7 +55,6 @@ export const ListOfUsers = () => {
 								}}>
 								{/*show the card*/}
 								<UserCard
-									key={i}
 									email={user.email}
 									firstName={user.first_name}
 									lastName={user.last_name}
