@@ -8,11 +8,13 @@ import './GlobalStyles.css';
 import { App } from './components/App';
 //import service worker
 import * as serviceWorker from './utils/serviceWorker';
+//import the context provider
+import { ContextProvider } from './utils/context';
 
 render(
-	<React.StrictMode>
+	<ContextProvider>
 		<App />
-	</React.StrictMode>,
+	</ContextProvider>,
 	document.getElementById('root'),
 );
 
