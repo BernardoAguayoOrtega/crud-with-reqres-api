@@ -1,5 +1,13 @@
 //import react
 import React from 'react';
+//import header component
+import { Header } from '../Header';
 
 //create and export app component
-export const App = () => <h1>Im the app</h1>;
+export const App = () => {
+	return (
+		<>
+			<Header />
+		</>
+	);
+};
