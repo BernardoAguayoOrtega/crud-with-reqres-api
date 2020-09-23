@@ -29,6 +29,7 @@ export const CreateUser = () => {
 		setLastName,
 		avatar,
 		setAvatar,
+		createNewUser,
 	} = useContext(Context);
 
 	//handle the open
@@ -40,7 +41,10 @@ export const CreateUser = () => {
 		setOpen(false);
 	};
 	//handle de delete
-	const handleSubmit = () => {};
+	const handleSubmit = () => {
+		handleClose();
+		createNewUser();
+	};
 
 	return (
 		<div>
@@ -99,7 +103,7 @@ export const CreateUser = () => {
 							className={classes.input}
 							type='file'
 							aria-label='avatar'
-							value={firstName}
+							value={avatar}
 							id='outlined-basic'
 							label='avatar'
 							variant='standard'
