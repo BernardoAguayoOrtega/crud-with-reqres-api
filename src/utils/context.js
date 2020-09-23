@@ -7,11 +7,29 @@ export const Context = React.createContext();
 //crete a context provider and export it
 export const ContextProvider = ({ children }) => {
 	//use state for user data
-	const [email, setEmail] = useState(undefined);
-	const [firstName, setFirstName] = useState(undefined);
-	const [lastName, setLastName] = useState(undefined);
-	const [avata, setAvatar] = useState(undefined);
-	const [id, setId] = useState(undefined);
+	const [email, setEmail] = useState('george.bluth@reqres.in');
+	const [firstName, setFirstName] = useState('George');
+	const [lastName, setLastName] = useState('Bluth');
+	const [avatar, setAvatar] = useState(
+		'https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg',
+	);
+	const [id, setId] = useState('1');
 
-	return <Context.Provider>{children}</Context.Provider>;
+	return (
+		<Context.Provider
+			value={{
+				email,
+				setEmail,
+				firstName,
+				setFirstName,
+				lastName,
+				setLastName,
+				avatar,
+				setAvatar,
+				id,
+				setId,
+			}}>
+			{children}
+		</Context.Provider>
+	);
 };
